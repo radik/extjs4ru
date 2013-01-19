@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Обзор",
+        "items":[
+            {
+                "name": "getting_started",
+                "url": "guides/getting_started",
+                "title": "Введение в Ext JS 4",
+                "description": "Введение в Ext JS 4 расскажет вам с чего начать."
+            }
+        ]
+    },
+    {
+        "title": "Концепции",
+        "items":[
+            {
+                "name": "application_architecture",
+                "url": "guides/application_architecture",
+                "title": "Архитектура MVC приложения",
+                "description": "Ext JS 4 comes with a new application architecture that not only organizes your code but reduces the amount you have to write."
+            }
+        ]
+    }
+]
