@@ -6,7 +6,7 @@
 [jsduck]: https://github.com/senchalabs/jsduck/
 [Ext JS 4 RU]: https://github.com/radik/extjs4ru
 
-Это перевод документации по [Ext JS 4][].
+Это перевод документации по [Ext JS][].
 
 Все неравнодушные присоединяйтесь
 ---------------------------------
@@ -37,4 +37,5 @@
 7. Послать pull-request
 8. Попасть в список 'contributors'
 
-* Contributors
+Contributors
+------------
