@@ -5,10 +5,10 @@ ______________________________________________
 
 Это руководство будет полезно для любого разработчика, который собирается создавать новые или расширять существующие классы в Ext JS 4. Руководство разделено на 4 части:
 
-- Section I: "Overview" explains the need for a robust class system
-- Section II: "Naming Conventions" discusses the best practices for naming classes, methods, properties, variables and files.
-- Section III: "Hands-on" provides detailed step-by-step code examples
-- Section IV: "Errors Handling & Debugging" gives useful tips & tricks on how to deal with exceptions
+- Часть I: "Обзор" explains the need for a robust class system
+- Часть II: "Правила именования" discusses the best practices for naming classes, methods, properties, variables and files.
+- Часть III: "Практика" provides detailed step-by-step code examples
+- Часть IV: "Обработка ошибок & Debugging" gives useful tips & tricks on how to deal with exceptions
 
 ## I. Overview
 ______________
