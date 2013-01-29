@@ -1,9 +1,9 @@
-# Class System
+# Система классов
 ______________________________________________
 
-For the first time in its history, Ext JS went through a huge refactoring from the ground up with the new class system. The new architecture stands behind almost every single class written in Ext JS 4.x, hence it's important to understand it well before you start coding.
+Впервые в своей истории Ext JS провел полный рефакторинг и преобразовал свою систему классов. Практически каждый класс в Ext JS 4 создан на основе новой архитектуры, поэтому важно хорошо ее понять, прежде чем приступить к написанию кода.
 
-This manual is intended for any developer who wants to create new or extend existing classes in Ext JS 4.x. It's divided into 4 sections:
+Это руководство будет полезно для любого разработчика, который собирается создавать новые или расширять существующие классы в Ext JS 4. Руководство разделено на 4 части:
 
 - Section I: "Overview" explains the need for a robust class system
 - Section II: "Naming Conventions" discusses the best practices for naming classes, methods, properties, variables and files.
