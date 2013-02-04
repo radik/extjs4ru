@@ -22,11 +22,9 @@ Ext JS 4 ships with more than 300 classes. We have a huge community of more than
 
 JavaScript [prototype-oriented][] язык, не содержащий классов. Следовательно одно из самых сильных его сторон - гибкость. Одну и ту же работу можно выполнить множеством путей и в различных стилях. За это преимущество приходится платить появлением непредсказуемости. Из-за отсутсвия унифицированной структуры код на JavaScript может быть очень сложен для понимания, управления и переиспользования.
 
-С другой стороны, [class-based][] программирование до сих пор остается самым популярным в ООП. 
-[Class-based][] programming, on the other hand, still stays as the most popular model of OOP. [Class-based languages][] usually require strong-typing, provide encapsulation, and come with standard coding convention. By generally making developers adhere to a large set of principles, written code is more likely to be predictable, extensible and scalable over time. However, they don't have the same dynamic capability found in such language as JavaScript.
+С другой стороны, [class-based][] программирование до сих пор остается самым популярным в ООП. [Class-based languages][] обычно требуют сильной типизации, возможности инкапсуляции и определенного стиля написания кода. Заставляя разработчиков придерживаться большого количиства правил, они делают код более предсказуемым, расширяемым и масштабируемым с течением времени. Однако, они не обладают теми динамическими свойствами, которые есть в таких языках как JavaScript.
 
-Each approach has its own pros and cons, but can we have the good parts of both at the same time while concealing the bad parts? The answer is yes, and we've implemented the solution in Ext JS 4.
-
+Каждый подход имеет свои преимущества и недостатки. Но можем ли мы взять только преимущества и избавиться от недостатков? Ответ - да. И мы реализовали это в Ext JS 4.
 
 ## II. Naming Conventions
 ______________
