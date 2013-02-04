@@ -8,20 +8,21 @@ ______________________________________________
 - Часть I: "Обзор" объясняет необходимость создания надежной системы классов
 - Часть II: "Правила именования" объясняет правила именования классов, методов, свойств, переменных и файлов.
 - Часть III: "Практика" - пошаговые примеры кода.
-- Часть IV: "Обработка ошибок & Debugging" даст представление о том как обрабатывать возникающие ошибки.
+- Часть IV: "Обработка ошибок и отладка" дает представление о том как обрабатывать возникающие ошибки.
 
 ## I. Обзор
 ______________
 
-Ext JS 4 содержит более 300 классов.
+Ext JS 4 содержит более 300 классов. На сегодняшний день в нашем сообществе более 200,000 разработчиков по всему миру, которые обладают различным багажом опыта. При так распространении нашего фреймворка мы столкнулись с задачей обеспечения общей архитектуры, которая была бы:
+
 Ext JS 4 ships with more than 300 classes. We have a huge community of more than 200,000 developers to date, coming from various programming backgrounds all over the world. At that scale of a framework, we face a big challange of providing a common code architecture that is:
+- понятной и простой для изучения
+- быстрой для разработки, удобной для отладки, безболезненной для развертывания
+- хорошо организованной, расширяемой и управляемой
 
-- familiar and simple to learn
-- fast to develop, easy to debug, painless to deploy
-- well-organized, extensible and maintainable
+JavaScript [prototype-oriented][] язык, не содержащий классов. Следовательно одно из самых сильных его сторон - гибкость. Одну и ту же работу можно выполнить множеством путей и в различных стилях. За это преимущество приходится платить появлением непредсказуемости. Из-за отсутсвия унифицированной структуры код на JavaScript может быть очень сложен для понимания, управления и переиспользования.
 
-JavaScript is a classless, [prototype-oriented][] language. Hence by nature, one of the language's most powerful features is flexibility. It can get the same job done by many different ways, in many different coding styles and techniques. That feature, however, comes with the cost of unpredictability. Without a unified structure, JavaScript code can be really hard to understand, maintain and re-use.
-
+С другой стороны, [class-based][] программирование до сих пор остается самым популярным в ООП. 
 [Class-based][] programming, on the other hand, still stays as the most popular model of OOP. [Class-based languages][] usually require strong-typing, provide encapsulation, and come with standard coding convention. By generally making developers adhere to a large set of principles, written code is more likely to be predictable, extensible and scalable over time. However, they don't have the same dynamic capability found in such language as JavaScript.
 
 Each approach has its own pros and cons, but can we have the good parts of both at the same time while concealing the bad parts? The answer is yes, and we've implemented the solution in Ext JS 4.
