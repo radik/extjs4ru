@@ -5,14 +5,15 @@ ______________________________________________
 
 Это руководство будет полезно для любого разработчика, который собирается создавать новые или расширять существующие классы в Ext JS 4. Руководство разделено на 4 части:
 
-- Часть I: "Обзор" explains the need for a robust class system
-- Часть II: "Правила именования" discusses the best practices for naming classes, methods, properties, variables and files.
-- Часть III: "Практика" provides detailed step-by-step code examples
-- Часть IV: "Обработка ошибок & Debugging" gives useful tips & tricks on how to deal with exceptions
+- Часть I: "Обзор" объясняет необходимость создания надежной системы классов
+- Часть II: "Правила именования" объясняет правила именования классов, методов, свойств, переменных и файлов.
+- Часть III: "Практика" - пошаговые примеры кода.
+- Часть IV: "Обработка ошибок & Debugging" даст представление о том как обрабатывать возникающие ошибки.
 
-## I. Overview
+## I. Обзор
 ______________
 
+Ext JS 4 содержит более 300 классов.
 Ext JS 4 ships with more than 300 classes. We have a huge community of more than 200,000 developers to date, coming from various programming backgrounds all over the world. At that scale of a framework, we face a big challange of providing a common code architecture that is:
 
 - familiar and simple to learn
