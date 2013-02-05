@@ -109,21 +109,18 @@ Ext JS 4 поддерживает все популярные браузеры, 
 
 ### 2.2 Динамическая загрузка
 
-Open the Chrome Developer Tools and click on the Console option.  Now refresh the Hello Ext application.  You should see a warning in the console that looks like this:
+Откройте Chrome Developer Tools и переключитесь на вкладку Console. Теперь перезагрузите страницу с приложением Hello Ext. Вы должны увидеть в консоли следующее предупреждение:
 
 {@img loader-warning-viewport.png testing}
 
-Ext JS 4 comes with a system for dynamically loading only the JavaScript resources necessary to run your app.
-In our example `Ext.create` creates an instance of `Ext.container.Viewport`.  When `Ext.create` is called the loader will first check to see if `Ext.container.Viewport` has been defined.
-If it is undefined the loader will try to load the JavaScript file that contains the code for `Ext.container.Viewport` before instantiating the viewport object.  In our example the `Viewport.js` file gets loaded successfully, but the loader detects
-that files are being loaded in a less-than optimal manner.  Since we are loading the `Viewport.js` file only when an instance of `Ext.container.Viewport` is requested, execution of the code is stopped until that file has been loaded successfully, causing a short delay.
-This delay would be compounded if we had several calls to Ext.create,  because the application would wait for each file to load before requesting the next one.
+Ext JS 4 содержит систему для динамической подгрузки JavaScript-ресурсов, которая загружает файлы приложения по мере необходимости.
+В нашем примере `Ext.create` создает экземпляр `Ext.container.Viewport`. При вызове `Ext.create` загрузчик  сначала проверит определен ли `Ext.container.Viewport`. Если он неопределен, то загрузчик попытается загрузить JavaScript-файл, который содержит код для `Ext.container.Viewport`, перед тем как создать экземпляр объекта viewport. В нашем примере файл `Viewport.js` будет загружен, но приложение определит, что происходит это не оптимальным способом. Так как мы загружаем файл `Viewport.js` только после того как экземляр `Ext.container.Viewport` будет запрошен, выполнение нашего скрипта остановится до тех пор, пока файл не загрузится, что приведет к некоторой задержке по времени. Эта задержка увеличится, если мы будем многократно вызывать Ext.create, так как приложению придется ждать пока загрузятся все необходимые файлы один за другим.
 
-To fix this, we can add this one line of code above the call to `Ext.application`:
+Чтобы исправить это, необходимо добавить следующую строку в вызов `Ext.application`:
 
 `Ext.require('Ext.container.Viewport');`
 
-This will ensure that the file containing the code for `Ext.container.Viewport` is loaded before the application runs.  You should no longer see the `Ext.Loader` warning when you refresh the page.
+Это обеспечит загрузку файла, содержащего код для `Ext.container.Viewport`, до того как приложение запустится. Вы не должны больше видеть предупреждения от `Ext.Loader` после перезагрузки страницы.
 
 ### 2.3 Library Inclusion methods
 
