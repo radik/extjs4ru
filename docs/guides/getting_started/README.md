@@ -109,61 +109,58 @@ Ext JS 4 поддерживает все популярные браузеры, 
 
 ### 2.2 Динамическая загрузка
 
-Open the Chrome Developer Tools and click on the Console option.  Now refresh the Hello Ext application.  You should see a warning in the console that looks like this:
+Откройте Chrome Developer Tools и переключитесь на вкладку Console. Теперь перезагрузите страницу с приложением Hello Ext. Вы должны увидеть в консоли следующее предупреждение:
 
 {@img loader-warning-viewport.png testing}
 
-Ext JS 4 comes with a system for dynamically loading only the JavaScript resources necessary to run your app.
-In our example `Ext.create` creates an instance of `Ext.container.Viewport`.  When `Ext.create` is called the loader will first check to see if `Ext.container.Viewport` has been defined.
-If it is undefined the loader will try to load the JavaScript file that contains the code for `Ext.container.Viewport` before instantiating the viewport object.  In our example the `Viewport.js` file gets loaded successfully, but the loader detects
-that files are being loaded in a less-than optimal manner.  Since we are loading the `Viewport.js` file only when an instance of `Ext.container.Viewport` is requested, execution of the code is stopped until that file has been loaded successfully, causing a short delay.
-This delay would be compounded if we had several calls to Ext.create,  because the application would wait for each file to load before requesting the next one.
+Ext JS 4 содержит систему для динамической подгрузки JavaScript-ресурсов, которая загружает файлы приложения по мере необходимости.
+В нашем примере `Ext.create` создает экземпляр `Ext.container.Viewport`. При вызове `Ext.create` загрузчик  сначала проверит определен ли `Ext.container.Viewport`. Если он неопределен, то загрузчик попытается загрузить JavaScript-файл, который содержит код для `Ext.container.Viewport`, перед тем как создать экземпляр объекта viewport. В нашем примере файл `Viewport.js` будет загружен, но приложение определит, что происходит это не оптимальным способом. Так как мы загружаем файл `Viewport.js` только после того как экземляр `Ext.container.Viewport` будет запрошен, выполнение нашего скрипта остановится до тех пор, пока файл не загрузится, что приведет к некоторой задержке по времени. Эта задержка увеличится, если мы будем многократно вызывать Ext.create, так как приложению придется ждать пока загрузятся все необходимые файлы один за другим.
 
-To fix this, we can add this one line of code above the call to `Ext.application`:
+Чтобы исправить это, необходимо добавить следующую строку в вызов `Ext.application`:
 
 `Ext.require('Ext.container.Viewport');`
 
-This will ensure that the file containing the code for `Ext.container.Viewport` is loaded before the application runs.  You should no longer see the `Ext.Loader` warning when you refresh the page.
+Это обеспечит загрузку файла, содержащего код для `Ext.container.Viewport`, до того как приложение запустится. Вы не должны больше видеть предупреждения от `Ext.Loader` после перезагрузки страницы.
 
-### 2.3 Library Inclusion methods
+### 2.3 Способы подключения библиотек
 
-When you unzip the Ext JS 4 download, you will see the following files:
+Когда вы распакуете скачанный архив с Ext JS 4, вы увидете следующие файлы:
 
-1. `ext-debug.js` - This file is only for use during development.  It provides the minimum number of core Ext JS classes needed to get up and running.  Any additional classes should be dynamically loaded as separate files as demonstrated above.
+1. `ext-debug.js` - Этот файл используется только во время разработки. В нем содержится минимальное количество классов Ext JS необходимых для запуска. Другие дополнительные файлы должны быть подгружены динамически в виде отдельных файлов, как показано выше.
 
-2. `ext.js` - same as `ext-debug.js` but minified for use in production.  Meant to be used in combination with your application's `app-all.js` file. (see section *3*)
+2. `ext.js` - то же самое что и `ext-debug.js`, но минифицировано для использования в production. Это файл должен быть ииспользован вместе с `app-all.js` файлом вашего приложения. (см. раздел *3*)
 
-3. `ext-all-debug.js` - This file contains the entire Ext JS library.  This can be helpful for shortening your initial learning curve, however `ext-debug.js` is preferred in most cases for actual application development.
+3. `ext-all-debug.js` - Этот файл содержит всю библиотеку Ext JS. Этот файл может помочь когда вы начинаете изучение Ext JS, но `ext-debug.js` в большенстве случаев все же предпочительней для разработки реальных приложений.
 
-4. `ext-all.js` - This is a minified version of `ext-all-debug.js` that can be used in production environments, however, it is not recommended since most applications will not make use of all the classes that it contains.  Instead it is recommended that you create a custom build for your production environment as described in section *3*.
+4. `ext-all.js` - Это минифицированная версия `ext-all-debug.js`, которая может быть использована в production'е. Однако не рекомендуется этого делать, так как большинство приложений не использует все классы, которые в ней содержатся. Вместо это рекомендуется использовать свою собственную сборку. Как ее можно сделать описано в разделе *3*.
 
-## 3. Deployment
+## 3. Публикация
 
-The newly-introduced Sencha SDK Tools ([download here][sdk-download]) makes deployment of any Ext JS 4 application easier than ever. The tools allow you to generate a manifest of all JavaScript dependencies in the form of a JSB3 (JSBuilder file format) file, and create a custom build containing only the code that your application needs.
+Недавно представленный инструмент Sencha SDK Tools ([скачать][sdk-download]) делает публикацию любого Ext JS 4 приложение проще чем когда-либо. Он позволяет генерировать манифест файл, описывающий все JavaScript зависимости в формате JSB3 (JSBuilder file format), и создавать собственную сборку, которая содержит только необходимый для вашего приложения код.
 
-Once you've installed the SDK Tools, open a terminal window and navigate into your application's directory.
+После того как вы установили SDK Tools откройте окно терминала и перейдите в директорию вашего приложения.
 
     cd path/to/web/root/helloext
 
-From here you only need to run a couple of simple commands. The first one generates a JSB3 file:
+После этого вам прийдется лишь запустить пару простых команд. Первая сгенерирует JSB3 файл:
 
     sencha create jsb -a index.html -p app.jsb3
 
-For applications built on top of a dynamic server-side language like PHP, Ruby, ASP, etc., you can simply replace `index.html` with the actual URL of your application:
+Для приложений, построенных в сочетании с серверным языком, такими как PHP, Ruby, ASP и др., просто замените `index.html` на реальный URL вашего приложения:
 
     sencha create jsb -a http://localhost/helloext/index.html -p app.jsb3
 
-This scans your `index.html` file for all framework and application files that are actually used by the app, and then creates a JSB file called `app.jsb3`. Generating the JSB3 first gives us a chance to modify the generated `app.jsb3` before building - this can be helpful if you have custom resources to copy, but in most cases we can immediately proceed to build the application with the second command:
+Эта команда сканирует ваш `index.html` файл на наличие всех реально используемых файлов приложения и фреймворка, а потом создает файл `app.jsb3`. Генерирование сначала JSB3 файла позволяет нам при необходимости редактировать `app.jsb3` прежде чем делать build - это может быть удобно, если у вас есть дополнительные ресурсы, которые должны быть скопированы. В большинстве случаев мы можем сразу перейти к build'у нашего приложения при помощи следующей команды:
 
     sencha build -p app.jsb3 -d .
 
-This creates 2 files based on the JSB3 file:
+Будут созданы два файла, основанные на JSB3 файле:
 
-1. `all-classes.js` - This file contains all of your application's classes. It is not minified so is very useful for debugging problems with your built application.  In our example this file is empty because our "Hello Ext" application does not contain any classes.
+1. `all-classes.js` - Этот файл содержит все классы вашего приложения. Он не минифицирован, поэтому его удобно использовать для отладки. В нашем случае этот файл пустой, так как приложение "Hello Ext" не содержит классов.
 
-2. `app-all.js` - This file is a minimized build of your application plus all of the Ext JS classes required to run it. It is the minified and production-ready version of `all-classes.js + app.js`.
+2. `app-all.js` - Этот файл содержит ваше приложение и все необходимые для него классы Ext JS. Он минифицирован и представляет собой готовую для публикации версию `all-classes.js + app.js`.
 
-An Ext JS application will need a separate `index.html` for the production version of the app.  You will typically handle this in your build process or server side logic, but for now let's just create a new file in the `helloext` directory called `index-prod.html`:
+Для production версии Ext JS приложения понадобится собственный `index.html`. Обычно вы будете создавать его при помощи серверной части вашего приложения, а пока создадим новый файл `index-prod.html` в директории `helloext`:
 
     <html>
     <head>
@@ -176,13 +173,13 @@ An Ext JS application will need a separate `index.html` for the production versi
     <body></body>
     </html>
 
-Notice that `ext-debug.js` has been replaced with `ext.js`, and `app.js` has been replaced with `app-all.js`. If you navigate to [http://localhost/helloext/index-prod.html](http://localhost/helloext/index-prod.html) in your browser, you should see the production version of the "Hello Ext" application.
+Обратите внимание, что `ext-debug.js` был заменен на `ext.js`, а `app.js` на `app-all.js`. Если вы откроете [http://localhost/helloext/index-prod.html](http://localhost/helloext/index-prod.html) в вашем браузере, вы должны увидеть production версию приложения "Hello Ext".
 
-## 4. Further Reading
+## 4. Для дальнейшего чтения
 
-1. [Class System](#/guide/class_system)
-2. [MVC Application Architecture](#/guide/application_architecture)
-3. [Layouts and Containsers](#/guide/layouts_and_containers)
-4. [Working with Data](#/guide/data)
+1. [Система классов](#/guide/class_system)
+2. [Архитектура MVC приложения](#/guide/application_architecture)
+3. [Layouts и Containsers](#/guide/layouts_and_containers)
+4. [Работа с данными](#/guide/data)
 
 [sdk-download]: http://www.sencha.com/products/extjs/
