@@ -26,17 +26,19 @@ JavaScript [prototype-oriented][] язык, не содержащий класс
 
 Каждый подход имеет свои преимущества и недостатки. Но можем ли мы взять только преимущества и избавиться от недостатков? Ответ - да. И мы реализовали это в Ext JS 4.
 
-## II. Naming Conventions
+## II. Правила именования
 ______________
 
-Using consistent naming conventions throughout your code base for classes, namespaces and filenames helps keep your code organized, structured and readable.
+Придерживаясь определенных правил именования ваших классов, файлов и namespace'ов, вы сможете содержать свой код в хорошо организованном, структурированном и читабельном состоянии.
 
-### 1) Classes
+### 1) Классы
 
-Class names may only contain **alphanumeric** characters. Numbers are permitted but are discouraged in most cases, unless they belong to a technical term. Do not use underscores, hyphens, or any other nonalphanumeric character. For example:
+Имена классов могут содержать только **цифры и буквы**. Числа разрешены, но не рекомендуются в большинстве случаев, только если они не относятся к техническому термину. Никаких подчеркиваний, тире или других не буквенно-цифровых знаков. Например:
 
-  - `MyCompany.useful_util.Debug_Toolbar` is discouraged
-  - `MyCompany.util.Base64` is acceptable
+  - `MyCompany.useful_util.Debug_Toolbar` не разрешено
+  - `MyCompany.util.Base64` приемлемо
+
+
 
 Class names should be grouped into packages where appropriate and properly namespaced using object property dot-notation (.). At the minimum, there should be one unique top-level namespace followed by the class name. For example:
 
@@ -56,7 +58,7 @@ Acronyms should also follow CamelCased convention listed above. For example:
   - `MyCompany.server.Http` instead of `MyCompany.server.HTTP`
 
 
-### 2) Source Files
+### 2) Файлы
 
 The names of the classes map directly to the file paths in which they are stored. As a result, there must only be one class per file. For example:
 
@@ -66,7 +68,7 @@ The names of the classes map directly to the file paths in which they are stored
 
 `path/to/src` is the directory of your application's classes. All classes should stay under this common root and should be properly namespaced for the best development, maintenance and deployment experience.
 
-### 3) Methods and Variables
+### 3) Методы и Переменные
 
 - Similarly to class names, method and variable names may only contain **alphanumeric** characters. Numbers are permitted but are discouraged in most cases, unless they belong to a technical term. Do not use underscores, hyphens, or any other nonalphanumeric character.
 
@@ -84,7 +86,7 @@ The names of the classes map directly to the file paths in which they are stored
         var xmlReader
         var httpServer
 
-### 4) Properties
+### 4) Свойства
 
 - Class property names follow the exact same convention with methods and variables mentioned above, except the case when they are static constants.
 
