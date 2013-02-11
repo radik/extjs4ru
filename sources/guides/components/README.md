@@ -1,21 +1,14 @@
-# Components
+# Компоненты
 ______________________________________________
 
-An Ext JS application's UI is made up of one or many widgets called {@link Ext.Component Component}s. All Components are subclasses of the {@link Ext.Component} class
-which allows them to participate in automated lifecycle management including instantiation, rendering, sizing and positioning, and destruction.
-Ext JS provides a wide range of useful Components out of the box, and any Component can easily be extended to create a customized Component.
+Пользовательский интерфейс приложение на Ext JS состоит из множества виджетов, называемых {@link Ext.Component Компонент}ами. Все Компоненты являются наследниками класса {@link Ext.Component}, который дает им возможность учствовать в управлении жизненным циклом, состоящем из инстанциирования, рендеринга, изменений размеров, позиционирования и уничтожения. Ext JS соджержит множество компонент из коробки. Любая компонента может быть расширена. 
 
-## The Component Hierarchy
-
-A {@link Ext.container.Container Container} is a special type of Component that can contain other Components. A typical application is made up of many nested Components in a tree-like
-structure that is referred to as the Component hierarchy.  Containers are responsible for managing the Component lifecycle of their children, which includes creation, rendering,
-sizing and positioning, and destruction. A typical application's Component hierarchy starts with a {@link Ext.container.Viewport Viewport} at the top,
-which has other Containers and/or Components nested within it:
+## Иерархия компонент
+{@link Ext.container.Container Container} является компонентой специального вида, которая может содержать другие компоненты. Типичное приложение сосотоит из множества компонент в виде древовидной структуры, которая называется Иерархией компонент. Контейнеры ответсвенны за управление жизненым циклом дочерних компонент. Иерархия типичного приложения начинается с {@link Ext.container.Viewport Viewport}, который содержит друние контейнеры и\или компоненты:
 
 {@img component_hierarchy.png Component Hierarchy}
 
-Child Components are added to a Container using the Container's {@link Ext.container.Container#cfg-items items} configuration property.  This example uses {@link Ext#create Ext.create}
-to instantiate two {@link Ext.panel.Panel Panel}s, then adds those Panels as child Components of a Viewport:
+Дочерние компоненты добавляются в контейнер при помощие его конфигурационного свойства {@link Ext.container.Container#cfg-items items}. Следующий пример использует {@link Ext#create Ext.create} для сохдания двух {@link Ext.panel.Panel панел}ей, затем добавляет эти дочерние Panel в Viewport:
 
     @example
     var childPanel1 = Ext.create('Ext.panel.Panel', {

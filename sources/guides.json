@@ -18,6 +18,12 @@
                 "url": "guides/application_architecture",
                 "title": "Архитектура MVC приложения",
                 "description": "Ext JS 4 comes with a new application architecture that not only organizes your code but reduces the amount you have to write."
+            },
+            {
+                "name": "components",
+                "url": "guides/components",
+                "title": "Компоненты",
+                "description": "Описание иерархии компонентов и примеры их создания."
             }
         ]
     }
